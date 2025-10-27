@@ -337,11 +337,13 @@ This repository includes code and assets intended for hackathon submission. You 
 
 Ishan Surdi — Developer & maintainer
 
-- GitHub: [ishansurdi](https://github.com/ishansurdi)  
-- LinkedIn: [Your LinkedIn profile here] — replace with your URL  
-- Website: [Your personal website here] — replace with your URL
+Connect with me:
 
-Connect with me — I built this to showcase how database-native vector search and ColumnStore analytics can supercharge airline network planning and resilience analysis. If you'd like, I can help prepare the presentation slides or live demo script for the hackathon.
+[![GitHub](https://img.shields.io/badge/GitHub-ishansurdi-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ishansurdi)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/your-linkedin/)
+[![Website](https://img.shields.io/badge/Website-Visit-orange?style=for-the-badge&logo=google-chrome&logoColor=white)](https://yourwebsite.example)
+
+I built this to showcase how database-native vector search and ColumnStore analytics can supercharge airline network planning and resilience analysis. If you'd like, I can help prepare the presentation slides or live demo script for the hackathon.
 
 --
 
