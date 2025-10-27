@@ -33,7 +33,13 @@ See the structured tree in the project brief. Key folders:
 ## Running
 # AirRouteIQ — Airline Network Resilience Recommendation Engine
 
-![AirRouteIQ](frontend/static/images/architecture_diagram.png)
+<!-- Top logos: MariaDB (left) and HackerRank (right). Replace URLs with local assets if desired. -->
+<div style="display:flex; align-items:center; justify-content:space-between;">
+   <img src="https://seeklogo.com/images/M/mariadb-logo-7B0A7A6C12-seeklogo.com.png" alt="MariaDB" height="48" style="margin:8px;" />
+   <img src="https://assets-global.website-files.com/5f7d0b6b3b5e5c96a1a950b7/5f90b0c3b6a3f5b1d3e1c9b5_hackerrank-logo.png" alt="HackerRank" height="48" style="margin:8px;" />
+</div>
+
+![AirRouteIQ architecture](frontend/static/images/architecture_diagram.png)
 
 AirRouteIQ is a hackathon-ready prototype for analyzing, visualizing, and simulating airline network resilience. It combines OpenFlights data, MariaDB ColumnStore analytics, and MariaDB Vector embeddings to deliver fast similarity search, hub analytics, and disruption simulations through a Streamlit UI and an optional Flask API.
 
@@ -258,13 +264,45 @@ Put these in a `.env` file or export them in your shell. The backend reads these
 
 --
 
-## Output examples & diagrams
+## Output examples & sample screenshots
 
-- Architecture diagram: `docs/architecture.png` (also shown at the top of this README)
-- Database ERD: `docs/ERD.png`
-- Generated embeddings: `data/processed/embeddings.csv` (contains route id, description and embedding vector — open with pandas or inspect sample rows)
+The UI produces several visual outputs that are central to the demo. Below are brief descriptions of each screen, why the output matters, and a sample screenshot — replace the sample images with real screenshots from your local run for final submission.
 
-These artifacts are part of the deliverable: they show the transformation from raw OpenFlights rows → cleaned routes → semantic descriptions → embeddings → vector search results.
+### Route Search
+
+- What it does: semantic and attribute-based search across routes. Users can search by source/destination city, airline, volume, and natural-language descriptions ("transatlantic daily service"). When MariaDB Vector is available, results are returned via a DB-side vector similarity query; otherwise the app falls back to nearest-neighbor search on `data/processed/embeddings.csv`.
+- Why we need it: helps analysts find similar services, identify redundant links, and discover potential new city-pair matches. Useful for scenario planning and network growth.
+
+![Route Search sample](https://via.placeholder.com/1000x300.png?text=Route+Search+Screenshot)
+
+Output artifacts produced: ranked route table, embedding similarity scores, and a small map/snippet showing route geometry.
+
+### Hub Analytics
+
+- What it does: aggregates passenger volumes, computes hub centrality (connectivity), and highlights congestion/risk metrics per airport. Uses ColumnStore queries for fast aggregation across large tables (`passenger_stats`, `routes`).
+- Why we need it: identifies critical airports to prioritize for resilience investments and capacity upgrades. Judges can see which hubs contribute most to network connectivity and where single-point failures live.
+
+![Hub Analytics sample](https://via.placeholder.com/1000x300.png?text=Hub+Analytics+Screenshot)
+
+Output artifacts produced: ranked hub table, interactive charts (time-series, top inbound/outbound routes), and downloadable CSV of hub metrics.
+
+### Simulations
+
+- What it does: runs disruption scenarios (e.g., airport closure, weather event) and simulates flight reroutes, passenger displacement, and aggregate delay impacts. Visualizes results on maps and summary tables.
+- Why we need it: demonstrates the system's capability to stress-test the network and estimate operational impacts under disruptions — essential for resilience planning and contingency budgeting.
+
+![Simulations sample](https://via.placeholder.com/1000x300.png?text=Simulations+Screenshot)
+
+Output artifacts produced: alternative routing lists, aggregated delay/risk numbers, and scenario comparison visualizations.
+
+### Similar Routes AI
+
+- What it does: uses vector embeddings to find routes that are semantically similar (e.g., similar city pairs, market characteristics, or service profiles), enabling quick discovery of comparable services.
+- Why we need it: helps planners find comparable routes for benchmarking, estimating demand or pricing, and proposing network expansions based on similar markets.
+
+![Similar Routes AI sample](https://via.placeholder.com/1000x300.png?text=Similar+Routes+AI+Screenshot)
+
+Output artifacts produced: per-route similarity lists (with scores), nearest-neighbor visualizations, and an option to export similar-route bundles for downstream analysis.
 
 --
 
