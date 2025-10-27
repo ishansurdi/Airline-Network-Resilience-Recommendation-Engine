@@ -1,7 +1,7 @@
 <!-- Top logos: MariaDB (left) and HackerRank (right). Replace URLs with local assets if desired. -->
 <div style="display:flex; align-items:center; justify-content:space-between;">
    <img src="output_logo_images/mariadb.png" alt="MariaDB" height="48" style="margin:8px;" />
-   <img src="https://assets-global.website-files.com/5f7d0b6b3b5e5c96a1a950b7/5f90b0c3b6a3f5b1d3e1c9b5_hackerrank-logo.png" alt="HackerRank" height="48" style="margin:8px;" />
+   <img src="output_logo_images/hackerearth.svg" alt="HackerEarth" height="48" style="margin:8px;" />
 </div>
 
 
