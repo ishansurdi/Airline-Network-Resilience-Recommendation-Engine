@@ -1,0 +1,111 @@
+# Project structure
+
+This file lists all folders and files in the repository.
+
+- README.md
+- test-d-int.py
+- scripts/
+  - setup_mariadb.sql
+  - seed_database.py
+  - export_results.py
+- backend/
+  - __init__.py
+  - app.py
+  - requirements.txt
+  - __pycache__/
+    - __init__.cpython-313.pyc
+    - __init__.cpython-312.pyc
+    - app.cpython-313.pyc
+  - analytics/
+    - __init__.py
+    - hub_analysis.py
+    - disruption_simulation.py
+    - dashboard_queries.py
+    - __pycache__/
+      - __init__.cpython-313.pyc
+      - __init__.cpython-312.pyc
+      - hub_analysis.cpython-313.pyc
+      - hub_analysis.cpython-312.pyc
+      - disruption_simulation.cpython-313.pyc
+      - disruption_simulation.cpython-312.pyc
+  - vector_engine/
+    - __init__.py
+    - similarity_search.py
+    - model_loader.py
+    - embed_routes.py
+    - __pycache__/
+      - __init__.cpython-313.pyc
+      - __init__.cpython-312.pyc
+      - similarity_search.cpython-313.pyc
+      - similarity_search.cpython-312.pyc
+      - model_loader.cpython-313.pyc
+  - data_ingestion/
+    - __init__.py
+    - load_routes.py
+    - load_airports.py
+    - load_airlines.py
+    - generate_synthetic_descriptions.py
+    - __pycache__/
+      - __init__.cpython-313.pyc
+      - load_routes.cpython-313.pyc
+      - load_airports.cpython-313.pyc
+      - load_airlines.cpython-313.pyc
+      - generate_synthetic_descriptions.cpython-313.pyc
+  - config/
+    - __init__.py
+    - settings.py
+    - db_config.py
+    - __pycache__/
+      - __init__.cpython-313.pyc
+      - __init__.cpython-312.pyc
+      - settings.cpython-313.pyc
+      - settings.cpython-312.pyc
+      - db_config.cpython-313.pyc
+      - db_config.cpython-312.pyc
+- frontend/
+  - __init__.py
+  - streamlit_app.py
+  - __pycache__/
+    - __init__.cpython-313.pyc
+    - __init__.cpython-312.pyc
+    - streamlit_app.cpython-313.pyc
+  - static/
+    - css/
+      - style.css
+    - images/
+      - architecture_diagram.png
+  - utils/
+    - __init__.py
+    - helpers.py
+    - __pycache__/
+      - __init__.cpython-313.pyc
+      - __init__.cpython-312.pyc
+      - helpers.cpython-313.pyc
+      - helpers.cpython-312.pyc
+  - pages/
+    - __init__.py
+    - 1_Route_Search.py
+    - 2_Hub_Analytics.py
+    - 3_Simulations.py
+    - 4_Similar_Routes_AI.py
+    - __pycache__/
+      - 1_Route_Search.cpython-313.pyc
+- data/
+  - raw/
+    - routes.dat
+    - planes.dat
+    - countries.dat
+    - airports.dat
+    - airlines.dat
+  - processed/
+    - embeddings.csv
+    - routes_clean.csv
+    - synthetic_route_risks.csv
+  - samples/
+    - demo_routes.csv
+- docs/
+  - README.md
+  - presentation_deck.pdf
+  - ERD.png
+  - architecture.png
+
