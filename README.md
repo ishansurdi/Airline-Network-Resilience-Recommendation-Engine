@@ -9,6 +9,33 @@
 
 Prototype web app for analyzing and simulating airline network resilience using MariaDB Vector and ColumnStore. Built for the MariaDB Python Hackathon.
 
+---
+## 📋 Table of Contents
+
+- [Airline Network Resilience Recommendation Engine](#airline-network-resilience-recommendation-engine)
+  - [Features](#features)
+  - [Repository Layout](#repository-layout)
+  - [Setup](#setup)
+  - [Running](#running)
+- [AirRouteIQ — Airline Network Resilience Recommendation Engine](#airrouteiq--airline-network-resilience-recommendation-engine)
+  - [📋 Table of Contents](#-table-of-contents)
+  - [📊 Project at a Glance](#-project-at-a-glance)
+  - [🏗️ Repository Structure \& Rationale](#️-repository-structure--rationale)
+  - [⚙️ How It Works — Data Pipeline \& Runtime Flow](#️-how-it-works--data-pipeline--runtime-flow)
+  - [🗄️ MariaDB: What We Use and Why](#️-mariadb-what-we-use-and-why)
+  - [🚀 Quick Start — Download to Running](#-quick-start--download-to-running)
+  - [🔧 Configuration \& Environment Variables](#-configuration--environment-variables)
+  - [📸 Output Examples \& Sample Screenshots](#-output-examples--sample-screenshots)
+    - [🔍 Route Search](#-route-search)
+    - [🛫 Hub Analytics](#-hub-analytics)
+    - [🎯 Simulations](#-simulations)
+    - [🤖 Similar Routes AI](#-similar-routes-ai)
+  - [🔍 Troubleshooting](#-troubleshooting)
+  - [🚀 Contribution \& Extension Ideas](#-contribution--extension-ideas)
+  - [📄 License](#-license)
+  - [👨‍💻 Contact \& Author](#-contact--author)
+---
+
 ## Features
 - OpenFlights data ingestion (airports, airlines, routes)
 - Vector-based similar route search (MariaDB Vector)
@@ -48,32 +75,8 @@ AirRouteIQ is a hackathon-ready prototype for analyzing, visualizing, and simula
 
 This README is written to be comprehensive and reproducible for judges and reviewers: it explains the repository structure, why every major file/folder exists, how the system works end-to-end, how MariaDB is used (Vector + ColumnStore), and exactly how to reproduce results from a fresh checkout.
 
----
 
-## 📋 Table of Contents
 
-- [Airline Network Resilience Recommendation Engine](#airline-network-resilience-recommendation-engine)
-  - [Features](#features)
-  - [Repository Layout](#repository-layout)
-  - [Setup](#setup)
-  - [Running](#running)
-- [AirRouteIQ — Airline Network Resilience Recommendation Engine](#airrouteiq--airline-network-resilience-recommendation-engine)
-  - [📋 Table of Contents](#-table-of-contents)
-  - [📊 Project at a Glance](#-project-at-a-glance)
-  - [🏗️ Repository Structure \& Rationale](#️-repository-structure--rationale)
-  - [⚙️ How It Works — Data Pipeline \& Runtime Flow](#️-how-it-works--data-pipeline--runtime-flow)
-  - [🗄️ MariaDB: What We Use and Why](#️-mariadb-what-we-use-and-why)
-  - [🚀 Quick Start — Download to Running](#-quick-start--download-to-running)
-  - [🔧 Configuration \& Environment Variables](#-configuration--environment-variables)
-  - [📸 Output Examples \& Sample Screenshots](#-output-examples--sample-screenshots)
-    - [🔍 Route Search](#-route-search)
-    - [🛫 Hub Analytics](#-hub-analytics)
-    - [🎯 Simulations](#-simulations)
-    - [🤖 Similar Routes AI](#-similar-routes-ai)
-  - [🔍 Troubleshooting](#-troubleshooting)
-  - [🚀 Contribution \& Extension Ideas](#-contribution--extension-ideas)
-  - [📄 License](#-license)
-  - [👨‍💻 Contact \& Author](#-contact--author)
 
 ---
 
