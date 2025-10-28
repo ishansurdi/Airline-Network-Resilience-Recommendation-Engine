@@ -1,8 +1,15 @@
-<!-- Top logos: MariaDB (left) and HackerRank (right). Replace URLs with local assets if desired. -->
-<div style="display:flex; align-items:center; justify-content:space-between;">
-   <img src="output_logo_images/mariadb.png" alt="MariaDB" height="48" style="margin:8px;" />
-   <img src="output_logo_images/hackerearth.svg" alt="HackerEarth" height="48" style="margin:8px;" />
-</div>
+<table width="100%">
+  <tr>
+    <td align="left">
+      <img src="output_logo_images/mariadb.png" alt="MariaDB" height="48" />
+    </td>
+    <td align="right">
+      <img src="output_logo_images/hackerearth.svg" alt="HackerEarth" height="48" />
+    </td>
+  </tr>
+</table>
+
+
 
 
 # Airline Network Resilience Recommendation Engine
