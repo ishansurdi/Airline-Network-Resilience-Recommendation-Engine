@@ -48,23 +48,36 @@ AirRouteIQ is a hackathon-ready prototype for analyzing, visualizing, and simula
 
 This README is written to be comprehensive and reproducible for judges and reviewers: it explains the repository structure, why every major file/folder exists, how the system works end-to-end, how MariaDB is used (Vector + ColumnStore), and exactly how to reproduce results from a fresh checkout.
 
---
+---
 
-Table of contents
+## 📋 Table of Contents
 
-- Project at a glance
-- Project structure (file-by-file rationale)
-- How it works (pipeline & data flow)
-- MariaDB: what we use and why
-- Quick start (download → run)
-- Development notes & troubleshooting
-- Output examples & diagrams
-- License
-- Contact & credits
+- [Airline Network Resilience Recommendation Engine](#airline-network-resilience-recommendation-engine)
+  - [Features](#features)
+  - [Repository Layout](#repository-layout)
+  - [Setup](#setup)
+  - [Running](#running)
+- [AirRouteIQ — Airline Network Resilience Recommendation Engine](#airrouteiq--airline-network-resilience-recommendation-engine)
+  - [📋 Table of Contents](#-table-of-contents)
+  - [📊 Project at a Glance](#-project-at-a-glance)
+  - [🏗️ Repository Structure \& Rationale](#️-repository-structure--rationale)
+  - [⚙️ How It Works — Data Pipeline \& Runtime Flow](#️-how-it-works--data-pipeline--runtime-flow)
+  - [🗄️ MariaDB: What We Use and Why](#️-mariadb-what-we-use-and-why)
+  - [🚀 Quick Start — Download to Running](#-quick-start--download-to-running)
+  - [🔧 Configuration \& Environment Variables](#-configuration--environment-variables)
+  - [📸 Output Examples \& Sample Screenshots](#-output-examples--sample-screenshots)
+    - [🔍 Route Search](#-route-search)
+    - [🛫 Hub Analytics](#-hub-analytics)
+    - [🎯 Simulations](#-simulations)
+    - [🤖 Similar Routes AI](#-similar-routes-ai)
+  - [🔍 Troubleshooting](#-troubleshooting)
+  - [🚀 Contribution \& Extension Ideas](#-contribution--extension-ideas)
+  - [📄 License](#-license)
+  - [👨‍💻 Contact \& Author](#-contact--author)
 
---
+---
 
-## Project at a glance
+## 📊 Project at a Glance
 
 - Input data: OpenFlights datasets (airports, airlines, routes)
 - Vector embeddings: semantic descriptions for routes (stored in MariaDB Vector)
@@ -80,7 +93,7 @@ Why this design
 
 --
 
-## Repository structure and rationale
+## 🏗️ Repository Structure & Rationale
 
 Top-level layout (abridged):
 
@@ -127,7 +140,7 @@ Why each major file/folder exists (short rationale)
 
 --
 
-## How it works — data pipeline & runtime flow
+## ⚙️ How It Works — Data Pipeline & Runtime Flow
 
 1. Data ingestion
     - The repository includes OpenFlights source files in `data/raw/` (airlines.dat, airports.dat, routes.dat).
@@ -151,7 +164,7 @@ Why each major file/folder exists (short rationale)
 
 --
 
-## MariaDB: what we used and why
+## 🗄️ MariaDB: What We Use and Why
 
 - ColumnStore (MariaDB ColumnStore)
    - Purpose: scale analytical queries (OLAP), store large passenger statistics and route tables, and perform fast aggregations across millions of rows.
@@ -167,7 +180,7 @@ Notes about MariaDB setup
 
 --
 
-## Quick start — from download to running (tested)
+## 🚀 Quick Start — Download to Running
 
 Minimum requirements
 
@@ -253,7 +266,7 @@ streamlit run frontend/streamlit_app.py
 
 --
 
-## Configuration & environment variables
+## 🔧 Configuration & Environment Variables
 
 - `MARIADB_HOST` — MariaDB host (default: `localhost`)
 - `MARIADB_PORT` — MariaDB port (default: `3306`)
@@ -267,11 +280,11 @@ Put these in a `.env` file or export them in your shell. The backend reads these
 
 --
 
-## Output examples & sample screenshots
+## 📸 Output Examples & Sample Screenshots
 
 The UI produces several visual outputs that are central to the demo. Below are brief descriptions of each screen, why the output matters, and a sample screenshot — replace the sample images with real screenshots from your local run for final submission.
 
-### Route Search
+### 🔍 Route Search
 
 - What it does: semantic and attribute-based search across routes. Users can search by source/destination city, airline, volume, and natural-language descriptions ("transatlantic daily service"). When MariaDB Vector is available, results are returned via a DB-side vector similarity query; otherwise the app falls back to nearest-neighbor search on `data/processed/embeddings.csv`.
 - Why we need it: helps analysts find similar services, identify redundant links, and discover potential new city-pair matches. Useful for scenario planning and network growth.
@@ -280,7 +293,7 @@ The UI produces several visual outputs that are central to the demo. Below are b
 
 Output artifacts produced: ranked route table, embedding similarity scores, and a small map/snippet showing route geometry.
 
-### Hub Analytics
+### 🛫 Hub Analytics
 
 - What it does: aggregates passenger volumes, computes hub centrality (connectivity), and highlights congestion/risk metrics per airport. Uses ColumnStore queries for fast aggregation across large tables (`passenger_stats`, `routes`).
 - Why we need it: identifies critical airports to prioritize for resilience investments and capacity upgrades. Judges can see which hubs contribute most to network connectivity and where single-point failures live.
@@ -289,7 +302,7 @@ Output artifacts produced: ranked route table, embedding similarity scores, and 
 
 Output artifacts produced: ranked hub table, interactive charts (time-series, top inbound/outbound routes), and downloadable CSV of hub metrics.
 
-### Simulations
+### 🎯 Simulations
 
 - What it does: runs disruption scenarios (e.g., airport closure, weather event) and simulates flight reroutes, passenger displacement, and aggregate delay impacts. Visualizes results on maps and summary tables.
 - Why we need it: demonstrates the system's capability to stress-test the network and estimate operational impacts under disruptions — essential for resilience planning and contingency budgeting.
@@ -298,7 +311,7 @@ Output artifacts produced: ranked hub table, interactive charts (time-series, to
 
 Output artifacts produced: alternative routing lists, aggregated delay/risk numbers, and scenario comparison visualizations.
 
-### Similar Routes AI
+### 🤖 Similar Routes AI
 
 - What it does: uses vector embeddings to find routes that are semantically similar (e.g., similar city pairs, market characteristics, or service profiles), enabling quick discovery of comparable services.
 - Why we need it: helps planners find comparable routes for benchmarking, estimating demand or pricing, and proposing network expansions based on similar markets.
@@ -309,7 +322,7 @@ Output artifacts produced: per-route similarity lists (with scores), nearest-nei
 
 --
 
-## Troubleshooting (common issues during the hackathon)
+## 🔍 Troubleshooting
 
 - ModuleNotFoundError / ImportError when running Streamlit:
    - Always run `streamlit run frontend/streamlit_app.py` from the repository root. Many import issues come from running files as scripts from subfolders. If you must run from elsewhere, add the project root to `PYTHONPATH` or use the `-m` module flag.
@@ -322,7 +335,7 @@ Output artifacts produced: per-route similarity lists (with scores), nearest-nei
 
 --
 
-## Contribution & extension ideas (for future work / judges' suggestions)
+## 🚀 Contribution & Extension Ideas
 
 - Add authentication and user profiles to save query presets.
 - Support incremental embedding (only new/changed routes) and DB-side indexing tuning for MariaDB Vector.
@@ -330,13 +343,13 @@ Output artifacts produced: per-route similarity lists (with scores), nearest-nei
 
 --
 
-## License
+## 📄 License
 
 This repository includes code and assets intended for hackathon submission. You may choose an open source license for the final project — MIT is a common choice. Add a `LICENSE` file if you want to make the project open-source.
 
 --
 
-## Contact & author
+## 👨‍💻 Contact & Author
 
 Ishan Surdi — Developer & maintainer
 
