@@ -365,12 +365,3 @@ Connect with me:
 [![Website](https://img.shields.io/badge/Website-Visit-orange?style=for-the-badge&logo=google-chrome&logoColor=white)](https://yourwebsite.example)
 
 I built this to showcase how database-native vector search and ColumnStore analytics can supercharge airline network planning and resilience analysis. If you'd like, I can help prepare the presentation slides or live demo script for the hackathon.
-
---
-
-If you'd like, I can also:
-
-- Add a short `try-it` script that automatically runs a minimal demo dataset and opens Streamlit in your browser.
-- Swap the placeholder contact links for your real LinkedIn / website and embed author logos (GitHub / LinkedIn badges).
-
-Good luck at the hackathon — let me know if you want help preparing a 3–5 minute demo script and a one-slide summary for judges.
