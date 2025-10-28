@@ -292,7 +292,8 @@ The UI produces several visual outputs that are central to the demo. Below are b
 - What it does: semantic and attribute-based search across routes. Users can search by source/destination city, airline, volume, and natural-language descriptions ("transatlantic daily service"). When MariaDB Vector is available, results are returned via a DB-side vector similarity query; otherwise the app falls back to nearest-neighbor search on `data/processed/embeddings.csv`.
 - Why we need it: helps analysts find similar services, identify redundant links, and discover potential new city-pair matches. Useful for scenario planning and network growth.
 
-![Route Search sample](https://via.placeholder.com/1000x300.png?text=Route+Search+Screenshot)
+![Route Search sample](output_logo_images/RS-1.PNG)
+![Route Search sample](output_logo_images/RS-2.PNG)
 
 Output artifacts produced: ranked route table, embedding similarity scores, and a small map/snippet showing route geometry.
 
@@ -301,7 +302,8 @@ Output artifacts produced: ranked route table, embedding similarity scores, and 
 - What it does: aggregates passenger volumes, computes hub centrality (connectivity), and highlights congestion/risk metrics per airport. Uses ColumnStore queries for fast aggregation across large tables (`passenger_stats`, `routes`).
 - Why we need it: identifies critical airports to prioritize for resilience investments and capacity upgrades. Judges can see which hubs contribute most to network connectivity and where single-point failures live.
 
-![Hub Analytics sample](https://via.placeholder.com/1000x300.png?text=Hub+Analytics+Screenshot)
+![Hub Analytics sample](output_logo_images/HA-1.PNG)
+![Hub Analytics sample](output_logo_images/HA-2.PNG)
 
 Output artifacts produced: ranked hub table, interactive charts (time-series, top inbound/outbound routes), and downloadable CSV of hub metrics.
 
@@ -310,7 +312,7 @@ Output artifacts produced: ranked hub table, interactive charts (time-series, to
 - What it does: runs disruption scenarios (e.g., airport closure, weather event) and simulates flight reroutes, passenger displacement, and aggregate delay impacts. Visualizes results on maps and summary tables.
 - Why we need it: demonstrates the system's capability to stress-test the network and estimate operational impacts under disruptions — essential for resilience planning and contingency budgeting.
 
-![Simulations sample](https://via.placeholder.com/1000x300.png?text=Simulations+Screenshot)
+![Simulations sample](output_logo_images/SM-1.PNG)
 
 Output artifacts produced: alternative routing lists, aggregated delay/risk numbers, and scenario comparison visualizations.
 
@@ -319,7 +321,7 @@ Output artifacts produced: alternative routing lists, aggregated delay/risk numb
 - What it does: uses vector embeddings to find routes that are semantically similar (e.g., similar city pairs, market characteristics, or service profiles), enabling quick discovery of comparable services.
 - Why we need it: helps planners find comparable routes for benchmarking, estimating demand or pricing, and proposing network expansions based on similar markets.
 
-![Similar Routes AI sample](https://via.placeholder.com/1000x300.png?text=Similar+Routes+AI+Screenshot)
+![Similar Routes AI sample](output_logo_images/SR-1.PNG)
 
 Output artifacts produced: per-route similarity lists (with scores), nearest-neighbor visualizations, and an option to export similar-route bundles for downstream analysis.
 
