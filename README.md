@@ -1,13 +1,4 @@
-<table width="100%">
-  <tr>
-    <td align="left">
-      <img src="output_logo_images/mariadb.png" alt="MariaDB" height="48" />
-    </td>
-    <td align="right">
-      <img src="output_logo_images/hackerearth.svg" alt="HackerEarth" height="48" />
-    </td>
-  </tr>
-</table>
+
 
 
 
